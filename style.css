@@ -1,0 +1,59 @@
+body {
+  font-family: "Comic Sans MS", sans-serif;
+  background-color: #f5fdf6;
+  text-align: center;
+  margin: 0;
+  padding: 20px;
+}
+
+h1 {
+  color: #d62474;
+  margin-bottom: 20px;
+}
+
+.memory-game {
+  width: 360px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 80px);
+  grid-gap: 10px;
+}
+
+.memory-card {
+  width: 80px;
+  height: 80px;
+  position: relative;
+  transform: scale(1);
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+  cursor: pointer;
+}
+
+.memory-card.flip {
+  transform: rotateY(180deg);
+}
+
+.front-face,
+.back-face {
+
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  border-radius: 10px;
+  background-color: #fff;
+  backface-visibility: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.front-face {
+  transform: rotateY(180deg);
+}
+
+.back-face {
+  background-color: #e6c8da;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2em;
+  color: white;
+}
